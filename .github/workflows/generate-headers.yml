@@ -35,14 +35,16 @@ jobs:
           done
 
       - name: Init Submodules
+        shell: bash
         working-directory: src
         run: |
           git submodule update --init --recursive
 
       - name: Build Boost
+        shell: bash
         working-directory: src/boost
         run: |
-          ./bootstrap.sh
+          ./bootstrap.bat
           ./b2 headers
 
       - name: Copy Boost Directory
