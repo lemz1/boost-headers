@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubntu-latest
     steps:
       - name: Checkout Headers-Source
         uses: actions/checkout@v3
@@ -44,13 +44,13 @@ jobs:
         shell: bash
         working-directory: src/boost
         run: |
-          ./bootstrap.bat
+          ./bootstrap.sh
           ./b2 headers
 
       - name: Copy Boost Directory
         run: |
           mkdir -p dst/boost
-          cp -r src/boost/boost/* dst/boost
+          cp -rL src/boost/boost/* dst/boost
 
       - name: Push Main
         working-directory: dst
