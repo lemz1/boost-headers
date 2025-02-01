@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Headers-Source
         uses: actions/checkout@v3
